@@ -1,0 +1,50 @@
+{
+  "name": "p-seq",
+  "version": "1.0.0",
+  "description": "Run async tasks sequently",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unixzii/p-seq.git"
+  },
+  "keywords": [
+    "Promise",
+    "async",
+    "task",
+    "collection",
+    "array",
+    "sequence"
+  ],
+  "author": "Cyandev <unixzii@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unixzii/p-seq/issues"
+  },
+  "homepage": "https://github.com/unixzii/p-seq#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "eslint-plugin-mocha": "^4.9.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "co": "^4.6.0",
+    "is-fn": "^1.0.0",
+    "is-generator-fn": "^1.0.0",
+    "p-is-promise": "^1.1.0"
+  },
+  "xo": {
+    "plugins": [
+      "mocha"
+    ],
+    "rules": {
+      "mocha/no-exclusive-tests": "error"
+    }
+  }
+}
