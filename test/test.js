@@ -59,6 +59,9 @@ function * asyncWork4(filename) {
 
 function * asyncWork5(content) {
 	yield sleep(100);
+	if (!content) {
+		return 0;
+	}
 	return content.length;
 }
 
@@ -88,6 +91,13 @@ describe('Two way to pass arguments', () => {
 	it('should return a number 32', () => {
 		return expect(pSeq([asyncWork3, asyncWork4, asyncWork5]))
 			.to.eventually.equal(32, 'result is wrong');
+	});
+});
+
+describe('Tasks that are not async', () => {
+	it('should pass its result or itself through the chain', () => {
+		return expect(pSeq([asyncWork3, asyncWork4, 'Hello', asyncWork5, count => count + 1]))
+			.to.eventually.equal(6, 'result is wrong');
 	});
 });
 

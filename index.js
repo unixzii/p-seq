@@ -12,12 +12,9 @@ function pSeq(tasks) {
 		_tasks = tasks;
 	} else {
 		const args = Array.prototype.slice.call(arguments);
-
-		for (const key in args) {
-			if (Object.prototype.hasOwnProperty.call(args, key)) {
-				_tasks.push(args[key]);
-			}
-		}
+		args.forEach(arg => {
+			_tasks.push(arg);
+		});
 	}
 
 	return _tasks.reduce((promise, task) => {
@@ -28,16 +25,13 @@ function pSeq(tasks) {
 				next = task;
 			} else if (isFn(task)) {
 				next = task(value);
-				if (!pIsPromise(next)) {
-					return;
-				}
 			} else if (isGeneratorFn(task)) {
 				next = co(task(value));
+			} else {
+				next = task;
 			}
 
-			if (pIsPromise(next)) {
-				return next;
-			}
+			return next;
 		});
 	}, Promise.resolve());
 }
