@@ -1,4 +1,4 @@
-# p-seq [![Build Status](https://travis-ci.org/unixzii/p-seq.svg?branch=master)](https://travis-ci.org/unixzii/p-seq) [![Coverage Status](https://coveralls.io/repos/github/unixzii/p-seq/badge.svg?branch=master)](https://coveralls.io/github/unixzii/p-seq?branch=master)
+# p-seq [![Build Status](https://travis-ci.org/unixzii/p-seq.svg?branch=master)](https://travis-ci.org/unixzii/p-seq) [![Coverage Status](https://coveralls.io/repos/github/unixzii/p-seq/badge.svg?branch=master)](https://coveralls.io/github/unixzii/p-seq?branch=master) [![NPM Version](https://img.shields.io/npm/v/p-seq.svg)](https://npmjs.org/package/p-seq) [![Dependencies Status](https://david-dm.org/unixzii/p-seq.svg)](https://david-dm.org/unixzii/p-seq)
 
 > Run async tasks sequently
 
